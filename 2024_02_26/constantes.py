@@ -1,0 +1,3 @@
+COR_AMARELA = '\033[40;33m'
+COR_BRANCA  = '\033[40;37m'
+COR_AZUL    = '\033[40;36m'
