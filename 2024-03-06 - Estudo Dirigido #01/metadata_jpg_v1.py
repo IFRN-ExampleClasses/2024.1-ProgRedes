@@ -47,14 +47,17 @@ else:
     dicEXIF = { 'exifSize' : exifSize, 'exifMarker': exifHeader, 
                 'temp1'    : temp1   , 'tiffHeader': tiffHeader, 
                 'temp2'    : temp2   , 'temp3'     : temp3,
-                'metaCoumt': countMetadata}
+                'metaCount': countMetadata}
 
     # Obtendo os Metadados
     lstMetadata   = list()
     lstMetaHeader = ['TAGNumber', 'DataFormat', 'NumberComponentes', 'DataValue']
     for _ in range(countMetadata):
-        lstTemp = [fileContent.read(2), fileContent.read(2),
-                   fileContent.read(4), fileContent.read(4)]
+        idTAGNumber      = fileContent.read(2) # Identificador do Metadado
+        idDataFormat     = fileContent.read(2) # Tipo do Metadado
+        numberComponents = fileContent.read(4) # Qt. Repetições do Metadado
+        dataValue        = fileContent.read(4) # Valor do Metadado / Se maior que 4 bytes -> indica Offset
+        lstTemp = [idTAGNumber, idDataFormat, numberComponents, dataValue]
         lstMetadata.append(dict(zip(lstMetaHeader, lstTemp)))
 
     # Imprimindo os resultados
