@@ -1,4 +1,4 @@
-import os, sys
+import sys
 from metadata_constantes import *
 
 strNomeArq = DIR_IMG + '\\LMC_20221219_202142_v7.jpg'
@@ -44,8 +44,11 @@ else:
     # Obtendo os Metadados
     lstMetadata   = list()
     for _ in range(countMetadata):
-        lstTemp = [fileContent.read(2), fileContent.read(2),
-                   fileContent.read(4), fileContent.read(4)]
+        idTAGNumber      = fileContent.read(2) # Identificador do Metadado
+        idDataFormat     = fileContent.read(2) # Tipo do Metadado
+        numberComponents = fileContent.read(4) # Qt. Repetições do Metadado
+        dataValue        = fileContent.read(4) # Valor do Metadado / Se maior que 4 bytes -> indica Offset
+        lstTemp = [idTAGNumber, idDataFormat, numberComponents, dataValue]
         lstMetadata.append(dict(zip(METADATA_HEADER, lstTemp)))
 
     # Imprimindo os resultados
