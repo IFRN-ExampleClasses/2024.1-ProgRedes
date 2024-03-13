@@ -6,7 +6,7 @@ DIR_IMG = DIR_APP + '\\images'
 
 CODE_PAGE = 'utf-8'
 
-METADATA_HEADER = ['TAGNumber', 'DataFormat', 'NumberComponentes', 'DataValue']
+METADATA_HEADER = ['TAGNumber', 'DataFormat', 'NumberComponents', 'DataValue']
 
 # (b'\x49\x49': Little Endian - Intel / b'\x4D\xD9': Big Endian - Motorola)
 BYTE_ORDER = {b'\x49\x49': 'little', b'\x4D\x4D': 'big'}

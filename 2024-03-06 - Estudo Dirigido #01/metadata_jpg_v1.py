@@ -51,7 +51,7 @@ else:
 
     # Obtendo os Metadados
     lstMetadata   = list()
-    lstMetaHeader = ['TAGNumber', 'DataFormat', 'NumberComponentes', 'DataValue']
+    lstMetaHeader = ['TAGNumber', 'DataFormat', 'NumberComponents', 'DataValue']
     for _ in range(countMetadata):
         idTAGNumber      = fileContent.read(2) # Identificador do Metadado
         idDataFormat     = fileContent.read(2) # Tipo do Metadado

@@ -56,12 +56,6 @@ else:
         lstTemp = [idTAGNumber, idDataFormat, numberComponents, dataValue]
         lstRAWMetadata.append(dict(zip(METADATA_HEADER, lstTemp)))
 
-    # Imprimindo os metadados lidos
-    print('METADADOS LIDOS (BRUTOS)')
-    print('-'*80)
-    for metaData in lstRAWMetadata: print(metaData)
-    print('\n\n')
-
     # Invertendo os bytes das chaves do dicionário TAG_NUMBER (padrão II)
     if tiffHeader == b'\x49\x49':
         TAG_NUMBER = {key[::-1]: value for key, value in TAG_NUMBER.items()}
@@ -79,11 +73,12 @@ else:
         lstTemp = [strTAGName, strDataFormat, intQtCaracteres, valorData]
         lstDEALMetadata.append(dict(zip(METADATA_HEADER, lstTemp)))
 
-    # Imprimindo os metadatas tratados
-    print('METADADOS LIDOS (TRATADOS)')
+
+    # Imprimindo os metadados lidos
+    print('METADADOS LIDOS (BRUTOS & TRATADOS)')
     print('-'*80)
-    for metaData in lstDEALMetadata: print(metaData)
-    print('\n\n')
+    for i in range(countMetadata): 
+        print(f'{lstRAWMetadata[i]}\n{lstDEALMetadata[i]}\n')
 
     # Fechando o arquivo
     fileContent.close()
