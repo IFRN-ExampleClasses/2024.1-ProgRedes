@@ -1,14 +1,19 @@
 import socket
 
-#url_host    = 'www.httpbin.org'
-#url_image   = '/image/png'
+# --------------------------------------------------
+# Documentação Protocolo HTTP
+# https://datatracker.ietf.org/doc/html/rfc2616
+# --------------------------------------------------
 
-url_host    = 'ead.ifrn.edu.br'
-url_image   = 'portal/wp-content/uploads/2019/03/4Iwakb0M_400x400.png'
+url_host    = 'www.httpbin.org'
+url_image   = '/image/png'
+
+#url_host    = 'ead.ifrn.edu.br'
+#url_image   = 'portal/wp-content/uploads/2019/03/4Iwakb0M_400x400.png'
 
 url_request = f'HEAD /{url_image} HTTP/1.1\r\nHOST: {url_host}\r\n\r\n' 
 
-HOST_PORT   = 443
+HOST_PORT   = 80
 BUFFER_SIZE = 1024
 
 sock_img = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

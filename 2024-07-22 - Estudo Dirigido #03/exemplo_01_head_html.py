@@ -1,6 +1,11 @@
 import socket, sys
 
 # --------------------------------------------------
+# Documentação Protocolo HTTP
+# https://datatracker.ietf.org/doc/html/rfc2616
+# --------------------------------------------------
+
+# --------------------------------------------------
 PORT        = 80
 CODE_PAGE   = 'utf-8'
 BUFFER_SIZE = 1024

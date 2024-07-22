@@ -1,5 +1,10 @@
 import socket
 
+# --------------------------------------------------
+# Documentação Protocolo HTTP
+# https://datatracker.ietf.org/doc/html/rfc2616
+# --------------------------------------------------
+
 url_host    = 'httpbin.org'
 url_image   = '/image/png'
 url_request = f'GET {url_image} HTTP/1.1\r\nHOST: {url_host}\r\n\r\n' 
