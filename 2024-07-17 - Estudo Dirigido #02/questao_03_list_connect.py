@@ -1,9 +1,11 @@
 import sys, os, socket
 
+# ------------------------------------------------------------
 # Arquivo de Entrada
 dirInput = os.path.dirname(os.path.abspath(__file__))
 strNomeArq = f'{dirInput}\\portas.txt' 
 
+# ------------------------------------------------------------
 # Ler arquivo e montar uma lista
 lstPorts = list()
 try:
@@ -13,18 +15,20 @@ try:
 except:
     sys.exit(f'\nERRO: {sys.exc_info()[0]}\n')
 
+# ------------------------------------------------------------
 # Solicitar URL do HOST e obter o seu respectivo IP
 strURL = input('\nInforme a URL do HOST: ')
 ipHost = socket.gethostbyname(strURL)
 
+# ------------------------------------------------------------
 # Iterar a lista de portas
 print('\n'+'-'*100)
-print(f'Escaneando o IP {ipHost}')
+print(f'Escaneando o IP {ipHost} / {strURL}')
 for portTest in lstPorts:
     try:
         protType = socket.SOCK_STREAM if portTest[1] == 'TCP' else socket.SOCK_DGRAM 
         sockTest = socket.socket(family=socket.AF_INET, type=protType)
-        sockTest.settimeout(3)
+        sockTest.settimeout(5)
         conn = sockTest.connect((ipHost, int(portTest[0])))
     except KeyboardInterrupt:
         sys.exit('AVISO: Escaneamento Interrompido (<Ctrl>+<C> Pressionado ...)')

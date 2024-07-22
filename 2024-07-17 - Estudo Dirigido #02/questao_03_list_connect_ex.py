@@ -1,9 +1,11 @@
 import sys, os, socket
 
+# ------------------------------------------------------------
 # Arquivo de Entrada
 dirInput = os.path.dirname(os.path.abspath(__file__))
 strNomeArq = f'{dirInput}\\portas.txt' 
 
+# ------------------------------------------------------------
 # Ler arquivo e montar uma lista
 lstPorts = list()
 try:
@@ -13,10 +15,12 @@ try:
 except:
     sys.exit(f'\nERRO: {sys.exc_info()[0]}\n')
 
+# ------------------------------------------------------------
 # Solicitar URL do HOST e obter o seu respectivo IP
 strURL = input('\nInforme a URL do HOST: ')
 ipHost = socket.gethostbyname(strURL)
 
+# ------------------------------------------------------------
 # Iterar a lista de portas
 print('\n'+'-'*100)
 print(f'Escaneando o IP {ipHost}')
