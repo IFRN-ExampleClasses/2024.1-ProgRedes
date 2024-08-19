@@ -13,7 +13,7 @@ while True:
 
     # Recebendo echo do servidor
     dado_retorno, ip_retorno = udp_socket.recvfrom(BUFFER_SIZE)
-    mensagem_volta = data_retorno.decode(CODE_PAGE)
+    mensagem_volta = dado_retorno.decode(CODE_PAGE)
     print (f'Echo recebido {ip_retorno}: {mensagem_volta} ')
 
 # Fechando o socket
