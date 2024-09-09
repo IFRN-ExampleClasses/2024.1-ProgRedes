@@ -24,10 +24,8 @@ def carro_f1(nomePiloto: str):
     lstPodium.append([nomePiloto, round(d_tempo,5)])
 #------------------------------------------------------------
 
-if platform.system() == 'Windows':
-    os.system('cls')
-else:
-    os.system('clear')
+# Limpando a tela
+os.system('cls' if platform.system() == 'Windows' else 'clear')
 
 print('-'*80 + '\nGrande Prêmio Natal/RN 2023 da CORRIDA MALUCA\n' + '-'*80)
 

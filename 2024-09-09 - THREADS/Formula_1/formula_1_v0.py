@@ -20,7 +20,7 @@ else:
     os.system('clear')
 
 print('-'*80)
-print('Grande Prêmio Natal/RN 2023 da CORRIDA MALUCA')
+print('Grande Prêmio Natal/RN da CORRIDA MALUCA')
 print('-'*80)
 
 try:

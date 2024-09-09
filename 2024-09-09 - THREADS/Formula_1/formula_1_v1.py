@@ -1,4 +1,4 @@
-import sys, os, time, platform, random, threading
+import sys, os, time, platform, threading
 
 MAX_VOLTAS = 10
 
@@ -14,14 +14,10 @@ def carro_f1(nomePiloto: str):
     print(f'\t{nomePiloto} concluiu a prova em {d_tempo} segundos')
 # ------------------------------------------------------------
 
-if platform.system() == 'Windows':
-    os.system('cls')
-else:
-    os.system('clear')
+# Limpando a tela
+os.system('cls' if platform.system() == 'Windows' else 'clear')
 
-print('-'*80)
-print('Grande Prêmio Natal/RN 2023 da CORRIDA MALUCA')
-print('-'*80)
+print('-'*80 + '\nGrande Prêmio Natal/RN 2023 da CORRIDA MALUCA\n' + '-'*80)
 
 try:
     print('\nÉ DADA A LARGADA...\n')
